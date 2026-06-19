@@ -327,6 +327,24 @@ Gateway 是大型陣列天線 + 高功率 PA + 光纖回程的「衛星 access n
 
 ---
 
+### §6.3 對偶 long / short candidate mapping
+
+依 CLAUDE.md 分析框架「同一個變化必然伴隨對稱輸家」原則，本報告每個 catalyst / risk 標出對偶 short candidate：
+
+| Catalyst / Trend | Long (受惠) | Short (受擠) | 對偶機制 |
+|---|---|---|---|
+| [[Direct-to-Cell]] 商用化 | [[聯發科]] (MT6825 / M90) | [[啟碁]]、[[攸泰科技]]、[[台揚]] | 手機直連衛星 → 傳統 dishy / UT 終端結構性替代 |
+| [[SpaceX]] 垂直整合（dishy + payload 自製） | [[聯發科]] (跨星座中性)、[[穩懋]] (foundry 仍需) | [[啟碁]] (UT ODM 收回)、[[同欣電]] (RF 模組可能 in-house) | SpaceX 對 ODM + 部分封裝層的自製化壓擠 |
+| [[Starlink]] V3 Ka + V band 升級 | [[昇達科]] (V 波導唯一玩家)、[[穩懋]] (GaAs PA) | TW 純 Ku 玩家、舊一代 phased array 模組廠 | 頻段世代更替邊緣化舊規格 |
+| [[Optical ISL]] terabit 量產 | [[Coherent]]、[[TESAT-Spacecom]]、[[Mynaric]]（國際）；TW 候選 [[萊德光電]] | TW [[矽光子]] cluster ([[上詮]]、[[聯亞]]、[[華星光通]]) — **若無 LEO design-win 則回到 AI 資料中心紅海** | LEO ISL 由國際大廠把持，TW 仍以 AI 為主軸 |
+| [[Phased Array]] 集中化 | [[稜研科技]]、[[ADI]]、[[Anokiwave]] | 通用 modem 純玩家（無 phased array IP 者） | Beamformer 與 modem 分工，phased array IP 集中度上升 |
+| ADC/DAC 國際寡占持續 | [[ADI]]、[[TI]]、[[Renesas]] | TW 無 commercial 高速 RF ADC/DAC → **結構性錯失增量** | 不是 share gain/loss，而是 TW 整體被排除增量市場 |
+| [[3GPP Release 17/19]] NR-NTN 標準化 | [[聯發科]] (標準制定者) | [[Globalstar]] 專有方案 ([[Apple]] iPhone 路徑) — 標準化後封閉方案吸引力下降 | 開放 3GPP 對封閉專有的長期擠壓 |
+
+**核心觀察**：本報告 §5.7 [[聯發科]] 中性贏家 thesis 對應 §5.1 [[啟碁]] 結構性風險——同一份報告需同時 long [[聯發科]]、short 評估 [[啟碁]]，這是 long/short pairing 在 LEO 主題的具體應用。
+
+---
+
 ## Appendix A — 完整 TW LEO 個股 mapping
 
 對齊 [themes/低軌衛星.md](../../themes/低軌衛星.md) 列出的 42 家 TW 公司。
@@ -385,7 +403,22 @@ Gateway 是大型陣列天線 + 高功率 PA + 光纖回程的「衛星 access n
 
 ---
 
-## Appendix B — Verification log
+## Appendix B — Verification log + Channel check 加權
+
+### B.1 Source 信任原因 (依 CLAUDE.md 分析框架 Channel check 加權)
+
+| Source 類別 | 信任度 | 為什麼可信（第幾手 / 位置 / 誘因 / track record） |
+|---|---|---|
+| [[MediaTek]] / [[聯發科]] official press release | High | 第一手公司揭露；含法律責任；管理層位置（看全局策略）；MediaTek IR 過往 NTN 主張全部可追驗（track record 良好） |
+| [[FCC]] filing / [[ITU]] notification | High | 第一手政府文件；註冊 ID 可獨立查；無商業誘因偏頗 |
+| 法說會逐字稿 / 年報 | High | 第一手公司揭露；含經審計財務數字；CEO/CFO 位置（看策略 + 數字） |
+| [[Digitimes]] / 工商時報 / 經濟日報 | Medium | 第二手；記者通常與公司業務聯絡但非直接；含產業推測；台灣媒體偏正向（誘因：維持關係） |
+| 媒體報導 + 業內人士匿名引述 | Medium-Low | 第二/三手；引述者位置不明；常含「測風向」誘因；需 cross-verify ≥1 source |
+| [[SemiAnalysis]] / 高 reputation 分析 substack | Medium-High | 第二手但分析方法透明；技術細節通常 verifiable；明確付費商業模式（誘因清晰） |
+| 一般 blog / 自媒體 | Low | 第三手以上；難以驗證位置；常為「證明自己知道很多」誘因；track record 通常無 |
+| 公司未揭露的數字（推估） | Low | 0 手（自製）；明標 *（推測，依產品線推論）* |
+
+### B.2 adversarial verification 摘要
 
 詳細 6 點 adversarial verification 紀錄見 [research-notes/00-verification-log.md](research-notes/00-verification-log.md)。摘要：
 
