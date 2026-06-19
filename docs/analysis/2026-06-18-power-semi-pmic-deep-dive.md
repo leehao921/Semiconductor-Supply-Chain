@@ -353,6 +353,23 @@
 4. **[[中國]] 國產替代加速**：[[矽力-KY]] 中國市佔率提升的同時，**TW 同業（[[致新]] / [[茂達]]）出口中國訂單可能被 [[矽力]] / 中國本土廠擠壓**。
 5. **車用半導體去庫存延長**：[[Bosch]] / [[Continental]] 2026 訂單下修，[[台半]] / [[強茂]] 車用占比受壓。
 
+### §6.3 對偶 long / short candidate mapping
+
+依 CLAUDE.md 分析框架「同一個變化必然伴隨對稱輸家」原則，每個 catalyst / risk 標出對偶 short candidate：
+
+| Catalyst / Trend | Long (受惠) | Short (受擠) | 對偶機制 |
+|---|---|---|---|
+| [[Nexperia]] 出口管制轉單 (2026/3-) | [[強茂]]、[[台半]]、[[德微]]、[[富鼎]] | [[Nexperia]] / [[Wingtech]] 自身；歐洲 Tier 1 對 Nexperia 過度依賴的舊車用 PMIC 供應商；中資 SASAC 持股相關股票 | 中資控股風險 → 客戶分散採購 → TW IDM 拿 share |
+| [[Infineon]] / [[TI]] 漲價傳導 | TW Discrete IDM (漲價跟進、毛利擴張) | 下游 PSU / 系統廠（[[台達電]]、[[光寶科]] 等）若無法轉嫁 → margin 壓縮 | 漲價成本傳導不順的下游 → margin 直接吃 |
+| [[NVIDIA]] 800V HVDC (2026Q4-) | [[Wolfspeed]]、[[STM]]、[[Infineon]]（SiC）；[[Navitas]] (GaN)；TW [[漢磊]]、[[嘉晶]] (foundry/epi) | 傳統 12V/48V silicon MOSFET 純玩家無 [[GaN]] / [[SiC]] 路徑者；老一代 PMIC 設計 fab 沒有 [[BCD]] 高壓製程的廠商 | 高壓 wide-bandgap 替代低壓 silicon |
+| AI PC / AI Server Dr.MOS 倍增 | [[大中]]、[[茂達]]、[[矽力-KY]] | 消費 PC 純 PMIC 玩家（無 AI design-in）；NB 一般 PMIC 老客戶被迫升級 spec | AI 規格升級 → 舊規格 PMIC 邊緣化 |
+| [[Project Kuiper]] / [[OneWeb]] 上線 | [[強茂]] 衛星 PSU 元件 | [[Starlink]] 單一星座供應商過度集中者（風險敞口分散後成長性下降） | 多星座興起分散單一受惠程度 |
+| [[NXP]] × [[世界先進]] [[VSMC]] 12 吋投產 (2027) | [[世界先進]] (foundry)、用 12 吋的 PMIC fabless | TW 純 8 吋 BCD 純玩家在新世代 ASP 競爭中落後 | 12 吋 BCD 對 8 吋的成本與 ASP 優勢 |
+| [[中國]] 國產替代加速 ([[矽力-KY]] 受惠) | [[矽力-KY]]、中國本土 PMIC | [[致新]]、[[茂達]] 出口中國訂單；非中國 fab 上游夥伴 | 中國國產替代政策對其他外資的擠出 |
+| [[漢磊]] 仍在虧損 (-3.30% GM) | [[Wolfspeed]] (8 吋 SiC 規模優勢)、[[STM]] | [[漢磊]] (3707)、[[嘉晶]] (3016) 在量產規模追不上時繼續燒錢 | 化合物半導體 8 吋規模競賽 → 6 吋玩家被擠 |
+
+**核心觀察**：本報告 §5.6 [[漢磊]] 連兩年虧損的描寫，正是「結構性 vs 庫存週期」區分的具體應用——這不是庫存週期回落，而是 8 吋 vs 6 吋的結構性規模競賽。同樣道理，§5.8 [[矽力-KY]] 中國市佔率提升的同時，§5.9 [[致新]] / §5.10 [[茂達]] 出口中國的份額會被擠壓，需在投組構建時 long [[矽力]] + short 評估 [[致新]] / [[茂達]] 對中國的曝險。
+
 ---
 
 ## Appendix A — 完整 TW 功率元件 / PMIC 個股 mapping
@@ -381,7 +398,23 @@
 
 ---
 
-## Appendix B — Verification log
+## Appendix B — Verification log + Channel check 加權
+
+### B.1 Source 信任原因 (依 CLAUDE.md 分析框架 Channel check 加權)
+
+| Source 類別 | 信任度 | 為什麼可信（第幾手 / 位置 / 誘因 / track record） |
+|---|---|---|
+| 公司法說會 / 年報 / IR press release | High | 第一手公司揭露；含經審計財務數字；管理層位置（看全局策略）；含法律責任（披露不實有法律後果） |
+| 政府 / 監管機構公告（[[FCC]]、ITU、SEC、MOEX）| High | 第一手政府文件；註冊 ID 可獨立查；無商業誘因偏頗 |
+| 國際大廠 official press（[[Infineon]] / [[TI]] / [[Nexperia]] / [[Polar Semiconductor]]）| High | 第一手公司揭露；國際公司含 SEC 法律責任；track record 通常可追 |
+| [[Wikipedia]] 引用 primary（含 source link）| Medium-High | 內容本身是第二手，但若引述為政府文件或官方 press 則可往上追到第一手 |
+| 工商時報 / 經濟日報 / 鉅亨 / 數位時代 | Medium | 第二手；記者通常與公司 IR 業務聯絡，**台灣財經媒體普遍偏正向**（誘因：維持關係 + 廣告收入） |
+| [[Digitimes]] / 產業專業媒體 | Medium | 第二手但專業度較高；台灣電子業有業務網絡優勢；單一 source 仍需 cross-verify |
+| [[SemiAnalysis]] / 高品質付費 analyst substack | Medium-High | 第二手但分析方法透明；技術細節 verifiable；付費商業模式（誘因清晰） |
+| 一般 blog / 論壇 / 自媒體 | Low | 第三手以上；難驗證位置；常為「證明知道很多」誘因 |
+| 推估 / 公司未揭露的數字 | Low | 自製（0 手）；明標 *（推測，依產品線推論）* |
+
+### B.2 Adversarial verification 結果
 
 | Claim | Source | Confidence |
 |---|---|---|
